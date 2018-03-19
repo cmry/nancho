@@ -14,7 +14,7 @@ And add the following text:
 
 ```
 [Unit]
-Description=Automute Music on Browser
+Description=Automute Music on Browser Audio
 After=multi-user.target
 
 [Service]
