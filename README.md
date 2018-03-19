@@ -19,7 +19,7 @@ After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/usr/bin/python3 /path/to/somedir/nancho/nancho.py --browser=Firefox --music=Spotify --poll_time=2 --pause
+ExecStart=/usr/bin/python3 /path/to/somedir/nancho/nancho.py "--browser=Firefox --music=Spotify --poll_time=2 --pause"
 
 [Install]
 WantedBy=multi-user.target
