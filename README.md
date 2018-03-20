@@ -7,7 +7,7 @@ This app only works for :penguin: using :snake: 3.
 Clone the repository to `somedir` (i.e. the path to the script is now `somedir/nancho/nancho.py`), and set up a `systemd` file like so:
 
 ```shell
-sudo vi /etc/systemd/system/nancho.service
+sudo vi /etc/systemd/user/nancho.service
 ```
 
 And add the following text:
@@ -33,10 +33,9 @@ Now configure `nancho.sh` (in `somedir/nancho/nancho.sh`) to match your username
 vi /home/yourusername/path/to/somedir/nancho/nancho.sh
 ```
 
-And change `yourusername` in the first line, and the directory in the second line:
+And change the directory in the first line:
 
 
 ```shell
-export PULSE_RUNTIME_PATH="/run/user/$(id -u yourusername)/pulse/"
-/usr/bin/python3 /home/yourusername/path/to/somedir/nancho/nancho.py --browser=Firefox --music=Spotify --poll_time=2
+/usr/bin/python3 /home/yourusername/path/to/somedir/nancho/nancho.py --browser=Firefox --music=Spotify --poll_time=2 --pause
 ```
