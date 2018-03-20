@@ -1,6 +1,6 @@
 # nanchō
 
-This app only works for :penguin: using :snake: 3.
+This app only works for :penguin: using :snake: 2 or 3.
 
 ## Install
 

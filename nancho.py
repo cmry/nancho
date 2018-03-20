@@ -15,7 +15,7 @@ def parse_pacmd(browser, music):
     app_data = {}
     
     for line in sp.Popen("pacmd list-sink-inputs", shell=True, stderr=sp.PIPE, stdout=sp.PIPE,
-                         encoding='utf-8').stdout.read().split('\n'):
+                         ).stdout.read().decode('utf-8').split('\n'):
         
         if any(key + ': ' in line for key in ['index', 'state', 'client']):
             line = re.sub(" {2,}|\t", '', line)
