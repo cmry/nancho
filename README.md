@@ -4,7 +4,7 @@ This app only works for :penguin: using :snake: 2 or 3.
 
 ## Install
 
-Nancho can be ran in the backgroud automatically as a service. However, as it needs access to the `dbus` operations on user-level, these needed to be added to `systemctl --user`. The instructions below explain how to set this up.
+Nancho can be ran in the backgroud automatically as a service. However, as it needs access to the `dbus` operations on user-level, these need to be added to `systemctl --user`. The instructions below explain how to set this up.
 
 ### Cloning the Repository
 
