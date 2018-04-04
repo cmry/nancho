@@ -17,7 +17,7 @@ def parse_pacmd(browser, music):
     for line in sp.Popen("pacmd list-sink-inputs", shell=True, stderr=sp.PIPE, stdout=sp.PIPE,
                          ).stdout.read().decode('utf-8').split('\n'):
         
-        if any(key + ': ' in line for key in ['index', 'state', 'client', 'muted']):
+        if any(key + ': ' in line for key in ['index', 'state', 'client', 'muted', 'volume']):
             line = re.sub(" {2,}|\t", '', line)
             key, value = line.split(': ')
             app_data[key] = value
@@ -26,7 +26,7 @@ def parse_pacmd(browser, music):
                 for hook in states:
                     if hook in app_data['client']:
                         states[hook] = app_data['index'] if app_data['state'] == 'RUNNING' \
-                                       and app_data['muted'] != 'yes' else 0
+                                       and not ' 0%' in app_data['volume'] else 0
                 app_data = {}
 
     return states[browser], states[music]
