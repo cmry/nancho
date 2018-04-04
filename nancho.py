@@ -19,14 +19,15 @@ def parse_pacmd(browser, music):
         
         if any(key + ': ' in line for key in ['index', 'state', 'client', 'muted', 'volume']):
             line = re.sub(" {2,}|\t", '', line)
-            key, value = line.split(': ')
-            app_data[key] = value
+            key, *value = line.split(': ')
+            app_data[key] = ': '.join(value)
 
             if key == 'client':
+                print(app_data)
                 for hook in states:
                     if hook in app_data['client']:
                         states[hook] = app_data['index'] if app_data['state'] == 'RUNNING' \
-                                       and not ' 0%' in app_data['volume'] else 0
+                                       and not '/0%' in app_data['volume'] else 0
                 app_data = {}
 
     return states[browser], states[music]
