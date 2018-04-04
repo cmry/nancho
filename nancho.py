@@ -23,7 +23,6 @@ def parse_pacmd(browser, music):
             app_data[key] = ': '.join(value)
 
             if key == 'client':
-                print(app_data)
                 for hook in states:
                     if hook in app_data['client']:
                         states[hook] = app_data['index'] if app_data['state'] == 'RUNNING' \
