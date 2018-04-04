@@ -26,7 +26,7 @@ def parse_pacmd(browser, music):
                 for hook in states:
                     if hook in app_data['client']:
                         states[hook] = app_data['index'] if app_data['state'] == 'RUNNING' \
-                                       and app_date['muted'] != 'yes' else 0
+                                       and app_data['muted'] != 'yes' else 0
                 app_data = {}
 
     return states[browser], states[music]
