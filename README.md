@@ -58,7 +58,7 @@ And change the directory in the first line:
 
 **If Python 2**: change the python3 part in `/usr/bin/python3` to either `python2` or `python`.
 
-#### Arugments
+#### Arguments
 
 Note that this uses default arguments for the code above (e.g. `--browser=Firefox`), for an overview and help see `python nancho.py -h`. Moreoever, `poll_time` is set to 2 seconds - if you'd like more responsive pausing and trade-off some system load, decrease this number. 
 
@@ -75,3 +75,7 @@ And check for any errors with:
 ```shell
 systemctl --user status nancho
 ```
+
+### Note on Application Names (and New Firefox Versions Specifically)
+
+Firefox has changed it's audio application name in newer Ubuntu / Firefox versions to `AudioIPC Server`. You can always refer to `pacmd list-sink-inputs` and check under `application.name` for service identifiers to be put under the `--browser` and `--music` flags.
